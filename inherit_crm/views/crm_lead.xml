@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crm_lead_view_form_matrica">
+            <field name="name">crm.lead.view.form.matrica</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group[4]/field[@name='tag_ids']" position="after">
+                    <field name="is_pelanggan_baru"/>
+                    <field name="segment_pelanggan"/>
+                    <field name="segment_product"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Task Progress">
+                        <field name="task_ids">
+                            <tree string="Task Progress" editable="bottom">
+                                <field name="name"/>
+                                <field name="deadline_date"/>
+                                <field name="status"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                
+            </field>
+        </record>
+    </data>
+</odoo>
